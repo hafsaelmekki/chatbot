@@ -9,5 +9,5 @@ export type CloudOcrResult = {
 };
 
 export const runCloudOcr = async (_options: CloudOcrOptions): Promise<CloudOcrResult> => {
-  throw new Error("Cloud OCR non configuré. Définissez l''intégration dans lib/ocr/cloud.ts.");
+  throw new Error("Cloud OCR non configure. Definissez l''integration dans lib/ocr/cloud.ts.");
 };

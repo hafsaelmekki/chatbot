@@ -18,7 +18,7 @@ export default function ResultCard({ result, source, rawText }: ResultCardProps)
   return (
     <section className="result-card">
       <header>
-        <h2>Résultat</h2>
+        <h2>Resultat</h2>
         <Badge variant={result.verdict}>{verdictLabel[result.verdict]}</Badge>
         <span className="confidence">{Math.round(result.confidence * 100)}% confiance</span>
       </header>
@@ -26,7 +26,7 @@ export default function ResultCard({ result, source, rawText }: ResultCardProps)
       <p className="reasoning">{result.reasoning}</p>
 
       <div className="terms">
-        <h3>Termes clés détectés</h3>
+        <h3>Termes cles detectes</h3>
         <ul>
           {result.terms.map((term) => (
             <li key={term.term} className={term.matched ? "term-match" : "term-ok"}>

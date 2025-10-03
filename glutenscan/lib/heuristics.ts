@@ -1,12 +1,12 @@
 import { type AnalysisResult, analysisResultSchema } from "./schema";
 
 const GLUTEN_PATTERNS: Array<{ pattern: RegExp; rationale: string }> = [
-  { pattern: /\bbl[eé]\b/i, rationale: "Blé détecté" },
+  { pattern: /\bbl[e\u00E9]\b/i, rationale: "Ble detecte" },
   { pattern: /\bgluten\b/i, rationale: "Mention explicite de gluten" },
-  { pattern: /\borge\b/i, rationale: "Orge détectée" },
-  { pattern: /\bseigle\b/i, rationale: "Seigle détecté" },
-  { pattern: /\btriticale\b/i, rationale: "Triticale détecté" },
-  { pattern: /\b[eé]peautre\b/i, rationale: "Épeautre détecté" }
+  { pattern: /\borge\b/i, rationale: "Orge detectee" },
+  { pattern: /\bseigle\b/i, rationale: "Seigle detecte" },
+  { pattern: /\btriticale\b/i, rationale: "Triticale detecte" },
+  { pattern: /\b[e\u00E9]peautre\b/i, rationale: "Epeautre detecte" }
 ];
 
 const OAT_PATTERN = /\bavoine\b/i;
@@ -28,23 +28,23 @@ export const analyzeWithHeuristics = (text: string): AnalysisResult => {
   if (matchedTerms.length > 0) {
     verdict = "unsafe";
     confidence = 0.85;
-    rationaleParts.push("Ingrédients contenant du gluten détectés.");
+    rationaleParts.push("Ingredients contenant du gluten detectes.");
   }
 
   if (hasAvoine) {
     verdict = verdict === "unsafe" ? verdict : "warning";
     confidence = Math.max(confidence, 0.75);
-    rationaleParts.push("Présence d''avoine qui peut être contaminée par du gluten.");
+    rationaleParts.push("Presence d''avoine qui peut etre contaminee par du gluten.");
   }
 
   if (claimsGlutenFree && verdict !== "unsafe") {
     verdict = verdict === "warning" ? "warning" : "safe";
     confidence = Math.max(confidence, 0.6);
-    rationaleParts.push("Mention sans gluten détectée.");
+    rationaleParts.push("Mention sans gluten detectee.");
   }
 
   if (rationaleParts.length === 0) {
-    rationaleParts.push("Aucun ingrédient problématique détecté par les heuristiques.");
+    rationaleParts.push("Aucun ingredient problematique detecte par les heuristiques.");
   }
 
   const terms = [
@@ -54,7 +54,7 @@ export const analyzeWithHeuristics = (text: string): AnalysisResult => {
       rationale
     })),
     ...(hasAvoine
-      ? [{ term: "avoine", matched: true, rationale: "Avoine détectée" }]
+      ? [{ term: "avoine", matched: true, rationale: "Avoine detectee" }]
       : []),
     ...(claimsGlutenFree
       ? [{ term: "sans gluten", matched: false, rationale: "Mention sans gluten" }]

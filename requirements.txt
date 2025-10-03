@@ -1,6 +1,0 @@
-gradio>=4.0.0
-transformers>=4.40.0
-torch>=2.1.0; platform_system != 'Windows' or platform_machine != 'ARM64'
-sentence-transformers>=2.2.2
-numpy
-

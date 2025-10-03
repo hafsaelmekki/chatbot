@@ -14,13 +14,13 @@ export const enforceCors = (request: NextRequest) => {
     return null;
   }
 
-  return NextResponse.json({ error: "Origine non autorisée" }, { status: 403 });
+  return NextResponse.json({ error: "Origine non autorisee" }, { status: 403 });
 };
 
 export const enforceJsonContentType = (request: NextRequest) => {
   const contentType = request.headers.get("content-type");
   if (!contentType?.includes("application/json")) {
-    return NextResponse.json({ error: "Le corps doit être en JSON" }, { status: 415 });
+    return NextResponse.json({ error: "Le corps doit etre en JSON" }, { status: 415 });
   }
 
   return null;
@@ -29,7 +29,7 @@ export const enforceJsonContentType = (request: NextRequest) => {
 export const enforceMultipartContentType = (request: NextRequest) => {
   const contentType = request.headers.get("content-type");
   if (!contentType?.includes("multipart/form-data")) {
-    return NextResponse.json({ error: "Le corps doit être en multipart/form-data" }, { status: 415 });
+    return NextResponse.json({ error: "Le corps doit etre en multipart/form-data" }, { status: 415 });
   }
 
   return null;

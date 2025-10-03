@@ -49,7 +49,7 @@ export default function ImagePicker({ onPhotoSubmit, onTextSubmit, isLoading }: 
 
       <form className="picker-text" onSubmit={handleTextSubmit}>
         <textarea
-          placeholder="Ou collez la liste d'ingrédients ici"
+          placeholder="Ou collez la liste d'ingredients ici"
           value={textValue}
           onChange={(event) => setTextValue(event.target.value)}
           rows={4}

@@ -69,7 +69,7 @@ export default function HomePage() {
     <main className="container">
       <header className="hero">
         <h1>GlutenScan</h1>
-        <p>Analysez vos produits alimentaires pour détecter la présence de gluten.</p>
+        <p>Analysez vos produits alimentaires pour detecter la presence de gluten.</p>
       </header>
 
       <ImagePicker onPhotoSubmit={handlePhotoSubmit} onTextSubmit={handleTextSubmit} isLoading={isLoading} />

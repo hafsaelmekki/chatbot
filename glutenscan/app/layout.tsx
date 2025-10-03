@@ -3,11 +3,11 @@ import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "GlutenScan",
-  description: "Analysez les ingrédients de vos produits pour détecter le gluten",
+  description: "Analysez les ingredients de vos produits pour detecter le gluten",
   metadataBase: new URL("https://glutenscan.example.com"),
   openGraph: {
     title: "GlutenScan",
-    description: "Détectez rapidement le gluten dans vos produits",
+    description: "Detectez rapidement le gluten dans vos produits",
     url: "https://glutenscan.example.com",
     siteName: "GlutenScan"
   }

@@ -16,7 +16,7 @@ export const analysisResultSchema = z.object({
 });
 
 export const analyzeTextRequestSchema = z.object({
-  text: z.string().min(1, "Le texte à analyser est requis"),
+  text: z.string().min(1, "Le texte a analyser est requis"),
   locale: z.string().default("fr-FR"),
   productName: z.string().optional()
 });

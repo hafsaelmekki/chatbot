@@ -75,13 +75,13 @@ export const analyzeWithLLM = async (text: string, context: PromptContext = {}):
 
     const content = response.output_text;
     if (!content) {
-      throw new Error("Réponse vide de l''assistant");
+      throw new Error("Reponse vide de l''assistant");
     }
 
     const parsed = JSON.parse(content);
     return analysisResultSchema.parse(parsed);
   } catch (error) {
-    logger.error({ error }, "Échec de l'appel LLM, retour aux heuristiques");
+    logger.error({ error }, "echec de l'appel LLM, retour aux heuristiques");
     return heuristics;
   }
 };
