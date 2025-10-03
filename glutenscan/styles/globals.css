@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f5f7fa;
+  color: #1f2933;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.picker {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.picker-upload button,
+.picker-text button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.picker-text textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d0d5dd;
+  resize: vertical;
+}
+
+.picker-text button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.result-card {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.result-card header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result-card .confidence {
+  margin-left: auto;
+  font-weight: 600;
+  color: #475569;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.badge-safe {
+  background-color: rgba(34, 197, 94, 0.12);
+  color: #047857;
+}
+
+.badge-warning {
+  background-color: rgba(249, 115, 22, 0.12);
+  color: #c2410c;
+}
+
+.badge-unsafe {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+}
+
+.badge-unknown {
+  background-color: rgba(148, 163, 184, 0.12);
+  color: #475569;
+}
+
+.result-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result-card li {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.term-match strong {
+  color: #b91c1c;
+}
+
+.term-ok strong {
+  color: #047857;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 600;
+  text-align: center;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+pre {
+  white-space: pre-wrap;
+}
